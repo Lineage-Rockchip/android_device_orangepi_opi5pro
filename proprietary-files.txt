@@ -1,0 +1,15 @@
+## Board-specific blobs for the Orange Pi 5 Pro. Everything generic lives in
+## device/rockchip/rk35xx-common/proprietary-files.txt. These are pinned: the
+## main extraction source (the RK3576 MS dump) does not ship them, so
+## extract-utils restores them from vendor/orangepi/opi5pro by hash.
+
+## AP6256 (BCM43456) Wi-Fi: firmware and module nvram
+## Pinned from the Khadas Edge-2L dump (ANDROID14_RKR8): firmware 7.45.96.217
+## of 2024-10-31, the release matching bcmdhd 101.10.591.x. The stock ROM has
+## 7.45.96.97 of 2021. dhd_config picks the name by chip revision.
+vendor/etc/firmware/fw_bcm43456c5_ag.bin|0e69ac8ee6de7995bcd4f92192c484e1f5790bf2
+vendor/etc/firmware/fw_bcm43456c5_ag_apsta.bin|0e69ac8ee6de7995bcd4f92192c484e1f5790bf2
+vendor/etc/firmware/nvram_ap6256.txt|5e2f51680208586e0650a2479f715150baff2e0e
+
+## The BCM4345C5 Bluetooth patch (Ampak_CL1 37.4 MHz, 1075.1141) comes from
+## the common tree; the stock ROM's is 0039.0089 for the same module.
